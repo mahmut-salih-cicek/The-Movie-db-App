@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="secilenMovie"
+            type="com.developersout.proje.model.Movie" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MovieDetailsFragment">
+
+
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/detailsImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:downloadImage="@{secilenMovie.poster_path}"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:layout_width="53dp"
+                        android:layout_height="27dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="285dp"
+                        android:background="@drawable/ic__mdb_logo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </ImageView>
+
+
+                    <ImageView
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="84dp"
+                        android:layout_marginTop="288dp"
+                        android:background="@drawable/ic_rate__con"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_marginStart="176dp"
+                        android:layout_marginTop="298dp"
+                        android:background="@drawable/dot_bg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </ImageView>
+
+                    <TextView
+                        android:singleLine="true"
+                        android:textStyle="bold"
+                        android:id="@+id/detailsTitleView"
+                        android:layout_width="match_parent"
+                        android:layout_height="39dp"
+                        android:layout_marginTop="327dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="@{secilenMovie.title}"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/detailsOverviewView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="@{secilenMovie.overview}"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/detailsTitleView" />
+
+
+                    <TextView
+                        android:id="@+id/detailstReleaseDateView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_marginStart="189dp"
+                        android:layout_marginTop="288dp"
+                        android:gravity="start"
+                        android:paddingTop="0dp"
+                        android:text="@{secilenMovie.release_date}"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/detailsvoreRangeView"
+                        android:layout_width="30dp"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="112dp"
+                        android:layout_marginTop="288dp"
+                        android:gravity="start"
+                        android:text="@{String.valueOf(secilenMovie.vote_average)}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="288dp"
+                        android:gravity="start"
+                        android:text="/10"
+                        android:textColor="#60000000"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
